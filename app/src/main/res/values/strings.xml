@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SelectionPrototype</string>
+    <string name="add_item">Add Item</string>
+    <string name="delete_item_s">Delete item/s</string>
+</resources>

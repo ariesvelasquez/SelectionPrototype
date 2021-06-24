@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.ariesvelasquez.selectionprototype.ItemModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#FFFFFF"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imageViewBackground"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitCenter"
+            app:imageDrawableSrc="@{model.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textViewDescription"/>
+
+        <ImageView
+            android:id="@+id/buttonRemove"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_remove"
+            android:visibility="@{model.isSelected ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{model.name}"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Sample Text"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="8dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility='@{model.isDeleted.equals("0") ? View.VISIBLE : View.GONE}'-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        app:clickable='@{model.isActive.equals("1") ? true : false}'-->
+<!--        tools:background="@color/colorPrimary">-->
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/image_view_item_image"-->
+<!--            android:layout_width="44dp"-->
+<!--            android:layout_height="44dp"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:padding="@dimen/view_padding"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            app:dashboardItemIcon='@{model.icon}'-->
+<!--            app:isActive='@{model.isActive}'-->
+<!--            android:background="@drawable/shape_rectangle_rounded"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:src="@drawable/ic_dashboard_sip_order_card"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_view_label"-->
+<!--            fontPath="@string/app_typeface_tertiary_semi_bold"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/view_margin_top"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:textColor='@{model.isActive.equals("1") ? @color/text_primary : @color/text_tertiary}'-->
+<!--            android:textSize="@dimen/font_size_small_3"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/image_view_item_image"-->
+<!--            app:stringResource='@{model.label}'-->
+<!--            tools:text="Send Or Request"-->
+<!--            tools:textColor="@color/text_primary"/>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</layout>
